@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Student Management System</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style media="screen">
+    .card {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-body h1 {
+      text-align: center;
+    }
+
+    .card-body p {
+      text-align: center;
+    }
+
+    /* Centering the card body content */
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;  /* Ensures the card takes full height of the container */
+    }
+
+    /* Center the logout button container */
+    .logout-btn-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Optional: Make the button a bit larger */
+    .logout-btn {
+      font-size: 18px;
+      padding: 12px 24px;
+    }
+  </style>
+</head>
+
+<body>
+  {% include "school/navbar.html" %}
+  <br><br>
+
+  <div class="card">
+    <div class="card-body">
+      <h1 class="display-4">Hello {{ request.user.first_name }}</h1>
+      <p class="lead">Your account is not approved yet. <br><br> Our team is checking your profile. <br><br> Soon, your admission will be confirmed</p>
+      <hr class="my-4">
+      <p>Check back later.</p>
+      <div class="logout-btn-container">
+        <form method="POST" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary btn-lg logout-btn">Logout For Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {% include "school/footer.html" %}
+</body>
+
+</html>

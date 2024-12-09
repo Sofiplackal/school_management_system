@@ -1,0 +1,147 @@
+{% extends 'school/teacherbase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<head>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    /* General Link Styling */
+    a:link {
+      text-decoration: none;
+    }
+
+    /* Note Section Styling */
+    .attendance-message {
+      background-color: #f8f9fa; /* Light background color */
+      color: #333; /* Dark text color for contrast */
+      font-size: 1.25rem; /* Slightly larger font size */
+      font-weight: bold; /* Bold text for emphasis */
+      text-align: center; /* Center-align the text */
+      padding: 20px; /* Add padding inside the box */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern look */
+      margin: 20px 0; /* Space above and below the message */
+      width: 100%; /* Ensure it takes full width of parent */
+      max-width: 800px; /* Limit the width to 800px for large screens */
+      margin-left: auto; /* Centers the box horizontally */
+      margin-right: auto; /* Centers the box horizontally */
+    }
+
+    .attendance-message strong {
+      color: #007bff; /* Blue color for the class name */
+      font-size: 1.5rem; /* Slightly larger font size for emphasis */
+    }
+
+    /* Form Styling */
+    .form-content {
+      padding: 2rem;
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      margin-bottom: 2rem;
+      border-radius: 0.75rem;
+    }
+
+    .form-control {
+      border-radius: 1.25rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Submit Button Styling */
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      width: 50%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btnSubmit:hover {
+      background: #004a99;
+    }
+
+    /* Spacing and Layout */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Card and Layout Adjustments */
+    .card {
+      border-radius: 1rem;
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    /* Text Centering and Button Adjustment */
+    .text-center {
+      margin-top: 1.5rem;
+    }
+
+    /* Container Adjustment */
+    .container {
+      max-width: 900px;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 576px) {
+      .card {
+        width: 90%;
+      }
+
+      .attendance-message {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+        padding: 15px; /* Slightly less padding */
+      }
+    }
+  </style>
+</head>
+
+<!-- Form for submitting attendance -->
+<form method="post">
+  {% csrf_token %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+
+      <!-- Form Card -->
+      <div class="card shadow-sm p-3 mb-5 bg-body rounded col-md-8 col-lg-6">
+        <div class="card-body">
+
+          <!-- Attendance Message -->
+          <div class="attendance-message">
+            <p>PLEASE ENTER DATE FOR ATTENDANCE OF CLASS <strong>{{ cl }}</strong></p>
+          </div>
+
+          <!-- Form Content -->
+          <div class="form-content">
+            <!-- Date Input Field -->
+            <div class="mb-3">
+              <div class="form-group">
+                {% render_field form.date class="form-control" placeholder="Enter date (mm/dd/yyyy)" %}
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btnSubmit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+{% endblock content %}
+
+
+
+

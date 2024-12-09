@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    a:link {
+      text-decoration: none;
+    }
+
+    .order-card {
+      color: #fff;
+    }
+
+    .bg-c-blue {
+      background: linear-gradient(45deg, #4099ff, #73b4ff);
+    }
+
+    .bg-c-green {
+      background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+    }
+
+    .bg-c-yellow {
+      background: linear-gradient(45deg, #FFB64D, #ffcb80);
+    }
+
+    .bg-c-pink {
+      background: linear-gradient(45deg, #FF5370, #ff869a);
+    }
+
+    .card {
+      border-radius: 5px;
+      box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+      border: none;
+      margin-bottom: 30px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card .card-block {
+      padding: 25px;
+    }
+
+    .order-card i {
+      font-size: 26px;
+    }
+
+    .f-left {
+      float: left;
+    }
+
+    .f-right {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Card for Total Teacher -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-c-blue order-card">
+          <div class="card-body">
+            <h6 class="m-b-20">Total Teacher</h6>
+            <h2 class="text-end"><i class="fas fa-chalkboard-teacher f-left"></i><span>{{teachercount}}</span></h2>
+            <p class="m-b-0">Pending Teacher<span class="f-right">{{pendingteachercount}}</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for Total Student -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-c-green order-card">
+          <div class="card-body">
+            <h6 class="m-b-20">Total Student</h6>
+            <h2 class="text-end"><i class="fas fa-user-graduate f-left"></i><span>{{studentcount}}</span></h2>
+            <p class="m-b-0">Pending Students<span class="f-right">{{pendingstudentcount}}</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for Teachers Salary -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-c-yellow order-card">
+          <div class="card-body">
+            <h6 class="m-b-20">Teachers Salary</h6>
+            <h2 class="text-end"><i class="fas fa-search-dollar f-left"></i><span>{{teachersalary}}</span></h2>
+            <p class="m-b-0">Pending Salary<span class="f-right">{{pendingteachersalary}}</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for Student Fee -->
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card bg-c-pink order-card">
+          <div class="card-body">
+            <h6 class="m-b-20">Student Fee</h6>
+            <h2 class="text-end"><i class="fas fa-search-dollar f-left"></i><span>{{studentfee}}</span></h2>
+            <p class="m-b-0">Pending Dues<span class="f-right">{{pendingstudentfee}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JavaScript Bundle (includes Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+  </script>
+</body>
+
+</html>
+

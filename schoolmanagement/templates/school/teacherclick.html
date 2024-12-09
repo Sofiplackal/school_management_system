@@ -1,0 +1,24 @@
+{% extends 'school/homebase.html' %}
+{% block content %}
+
+<!-- Updated Jumbotron section with Bootstrap 5 -->
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="p-5 rounded-3 shadow-lg bg-light">
+        <h1 class="display-4 text-center">Hello, Teacher</h1>
+        <p class="lead text-center">Welcome to the School Management System.</p>
+        <hr class="my-4">
+        <p class="text-center">You can access various features after Login.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a class="btn btn-primary btn-lg" href="teachersignup" role="button">Apply For Job</a>
+          <a class="btn btn-primary btn-lg" href="teacherlogin" role="button">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+

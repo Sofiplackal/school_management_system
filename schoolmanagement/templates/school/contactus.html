@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Student Management System</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom Styling -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .alert {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .form-group input[type="submit"] {
+      width: 100%;
+      border-radius: 25px;
+      padding: 12px;
+      font-size: 1.2rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .form-heading {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #343a40;
+      margin-bottom: 2rem;
+    }
+
+    .form-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-card h3 {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-card label {
+      font-weight: 500;
+      color: #495057;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .form-heading {
+        font-size: 2rem;
+      }
+
+      .form-card {
+        padding: 1.5rem;
+      }
+
+      .form-group input[type="submit"] {
+        font-size: 1.1rem;
+        padding: 12px;
+      }
+    }
+
+    /* Mobile-first adjustments */
+    @media (max-width: 576px) {
+      .form-heading {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-card {
+        padding: 1rem;
+        box-shadow: none;
+      }
+
+      .form-group input[type="submit"] {
+        font-size: 1rem;
+        padding: 10px;
+      }
+
+      /* Reduce the font size of the form fields */
+      .form-card label, .form-card h3 {
+        font-size: 1.2rem;
+      }
+
+      /* Adjust input fields inside form */
+      .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"], .form-group textarea {
+        font-size: 1rem;
+        padding: 10px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  {% include "school/navbar.html" %}
+  <br><br>
+
+  <!-- Feedback Form Section -->
+  <div class="container">
+    <div class="text-center form-card">
+      <h3 class="form-heading">Send Us Your Valuable Feedback!</h3>
+
+      <!-- Feedback Form -->
+      <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Form Content -->
+        <div class="form-group mb-4">
+          <h3>{{ form.as_p }}</h3> <!-- Render form fields -->
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <input type="submit" value="Send Message">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <br><br>
+
+  {% include "school/footer.html" %}
+
+  <!-- Bootstrap 5 JS Bundle (with Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+

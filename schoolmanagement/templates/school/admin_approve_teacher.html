@@ -1,0 +1,71 @@
+{% extends 'school/adminbase.html' %}
+
+{% block content %}
+
+<head>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin-top: 50px;
+    }
+  </style>
+
+</head>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="card">
+      <div class="card-header">
+        <h6 class="card-title">Teachers</h6>
+      </div>
+
+      <div class="card-body">
+        <table class="table table-hover table-responsive" id="dev-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Mobile</th>
+              <th>Salary</th>
+              <th>Joining Date</th>
+              <th>Approve</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in teachers %}
+            <tr>
+              <td>{{ t.get_name }}</td>
+              <td>{{ t.mobile }}</td>
+              <td>{{ t.salary }}</td>
+              <td>{{ t.joindate }}</td>
+              <td><a class="btn btn-primary btn-sm" href="{% url 'approve-teacher' t.id %}"><i class="fa fa-check"></i> Approve</a></td>
+              <td><a class="btn btn-danger btn-sm" href="{% url 'delete-teacher' t.id %}"><i class="fa fa-trash-alt"></i> Delete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}
+

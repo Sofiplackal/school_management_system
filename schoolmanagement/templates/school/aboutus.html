@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Student Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+    /* Custom styling for jumbotron and content */
+    .jumbotron {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      padding: 40px;
+      background-color: #f8f9fa;
+      border-radius: 15px;
+    }
+
+    .jumbotron h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .jumbotron p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .lead {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .alert {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .btn-lg {
+      padding: 12px 25px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  {% include "school/navbar.html" %}
+  <div class="container">
+    <br><br>
+    <center>
+      <h3 class="alert alert-success" style="margin-bottom: 20px; width: 100%; max-width: 500px; margin-top: 20px;">About Us</h3>
+    </center>
+
+    <!-- Jumbotron Section -->
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Welcome to Our Platform</h1>
+      <p class="lead">A service dedicated to Admin, Student, and Teacher. Teachers can take attendance and post notices after their account is approved. Students can view their details and attendance once approved but can't see other's attendance or post notices. Admins can approve accounts, update details, and post notices. It helps make school management easier and more organized..</p>
+      <hr class="my-4">
+      <p>Explore our Website to learn more.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+      </p>
+    </div>
+  </div>
+
+  {% include "school/footer.html" %}
+  
+  <!-- Optional: Bootstrap JS (if needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
